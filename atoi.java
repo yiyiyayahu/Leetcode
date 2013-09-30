@@ -34,10 +34,3 @@
     public boolean isNumbers(char c) {
         return (c <= '9' && c >= '0');
     }
-    }
-    public boolean isValid(char c) {
-        return (c <= '9' && c >= '0') || c == '+' || c == '-';
-    }
-    public boolean isNumbers(char c) {
-        return (c <= '9' && c >= '0');
-    }
