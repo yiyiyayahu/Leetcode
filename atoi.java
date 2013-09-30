@@ -1,4 +1,4 @@
-       public int atoi(String str) {
+    public int atoi(String str) {
         
         str = str.trim();
         if(str == null) return 0;
