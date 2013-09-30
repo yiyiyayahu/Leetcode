@@ -12,7 +12,7 @@
             
             if(isNumbers(str.charAt(i))) {
                 num *= 10;                 //put num * 10 in the front
-                num += str.charAt(i) - '0';
+                num += str.charAt(i) - '0'; //remember to -'0'!
                 i++;
             } else {
                 break;
