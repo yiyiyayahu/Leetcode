@@ -19,8 +19,8 @@ public class Solution {
     public TreeNode sortedListToBST(ListNode head) {
         if(head == null) return null;
         int n = 0;
-        ListNode curr = head;
-        while(curr != null) {
+        ListNode curr = head;      //remember to assign head to another variable
+        while(curr != null) {         
             n ++;
             curr = curr.next;
         }
@@ -35,8 +35,8 @@ public class Solution {
             curr = curr.next;
         }
         TreeNode root = new TreeNode(curr.val);
-        root.left = sortedListToBSTHelper(head, start, mid - 1);
-        root.right = sortedListToBSTHelper(curr.next, mid + 1, end);
+        root.left = sortedListToBSTHelper(head, start, mid - 1);   
+        root.right = sortedListToBSTHelper(curr.next, mid + 1, end);     //curr.next, pay attention
         return root;
     }
 }
