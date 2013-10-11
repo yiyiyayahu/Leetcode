@@ -16,10 +16,12 @@ public class Solution {
         ListNode curr = head;
         while(curr.next != null) {
             ListNode runner = curr.next;
+            //find all the duplicated elements
             while(runner.next!=null && runner.val == runner.next.val) {
                 runner = runner.next;
             }
             if(curr.next != runner) {
+                //delete them
                 curr.next = runner.next;
             } else {
                 curr = curr.next;
