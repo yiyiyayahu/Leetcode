@@ -35,8 +35,7 @@ public class Solution {
             curr = curr.next;
         }
         TreeNode root = new TreeNode(curr.val);
-        TreeNode left = sortedListToBSTHelper(head, start, mid - 1);
-        root.left = left;
+        root.left = sortedListToBSTHelper(head, start, mid - 1);
         root.right = sortedListToBSTHelper(curr.next, mid + 1, end);
         return root;
     }
