@@ -1,5 +1,23 @@
 public class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
+        return buildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+    }
+    
+    public TreeNode buildTree(int[] inorder, int is, int ie, int[] postorder, int ps, int pe) {
+        if(is > ie || ps > pe) return null;
+        TreeNode root = new TreeNode(postorder[pe]);
+        for(int i = is; i <= ie; i++) {
+            if(inorder[i] == postorder[pe]) {
+                root.left = buildTree(inorder, is, i-1, postorder, ps, ps+i-1-is);
+                root.right = buildTree(inorder, i+1, ie, postorder, pe-ie+i, pe-1);
+            }
+        }
+        return root;
+    }
+}
+
+public class Solution {
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
         if(inorder == null && postorder == null) return null;
         if(inorder.length != postorder.length) return null;
         if(inorder.length == 0) return null;
