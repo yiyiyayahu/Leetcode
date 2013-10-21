@@ -27,7 +27,7 @@ public class Solution {
         int index2 = A.length - 1;
         int i = 0;
         while(i <= index2) {
-            if(A[i] == 0 && i > index0) {
+            if(A[i] == 0 && i > index0) { //remember to put the condition i > index0
                 swap(A, i, index0);
                 index0 ++;
                 continue;
@@ -37,7 +37,7 @@ public class Solution {
                 index2 --;
                 continue;
             }
-            i++;
+            i++;  //only increment i if A[i] == 1
         }
     }
     public void swap(int[] A, int i, int j) {
