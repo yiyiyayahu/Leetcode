@@ -1,3 +1,37 @@
+//O(n) space, inorder traversal
+public class Solution {
+    public void recoverTree(TreeNode root) {
+        //inorder traversal - arraylist
+        ArrayList<TreeNode> list = inorderTraversal(root);
+        for(int i = 0; i < list.size()-1; i ++) {
+            for(int j = i + 1; j < list.size(); j++) {
+                if(list.get(j).val < list.get(i).val) {
+                    int temp = list.get(i).val;
+                    list.get(i).val = list.get(j).val;
+                    list.get(j).val = temp;
+                }
+            }
+        }
+    }
+    
+    public ArrayList<TreeNode> inorderTraversal(TreeNode root) {
+        ArrayList<TreeNode> list = new ArrayList<TreeNode>();
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        TreeNode curr = root;
+        while(curr != null || !s.isEmpty()) {
+            if(curr != null) {
+                s.push(curr);
+                curr = curr.left;
+            } else {
+                curr = s.pop();
+                list.add(curr);
+                curr = curr.right;
+            }
+        }
+        return list;
+    }
+}
+
 //find from the Internet, O(n)
 public class Solution {
     public void recoverTree(TreeNode root) {
