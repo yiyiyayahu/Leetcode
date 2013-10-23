@@ -1,3 +1,6 @@
+//maintain the following information:
+//the maximum value of the subtree
+//but also need to maintain the max value of root.val + only one branch or no branch
 public class Solution {
     class IntWrapper {
         public int value = 0;
