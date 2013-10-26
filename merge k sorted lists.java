@@ -1,4 +1,4 @@
-//merge sort
+
 public class Solution {
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
         if(lists == null || lists.size() == 0) return null;
