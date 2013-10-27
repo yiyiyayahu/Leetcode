@@ -1,3 +1,5 @@
+//actually it is DFS. Pay attention to this coding style
+
 public class Solution {
     public ArrayList<ArrayList<String>> partition(String s) {
         ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
